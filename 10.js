@@ -32,7 +32,6 @@ const tempEl = document.getElementById(`character__template`);
 
 function renderCharacter(person) {
   const cloneEl = tempEl.content.cloneNode(true);
-  divEl.appendChild(cloneEl);
   const characterPhotoEl = cloneEl.querySelector(`.character__photo`);
 
   cloneEl.querySelector(`.name`).textContent = person.name;
@@ -41,6 +40,7 @@ function renderCharacter(person) {
   cloneEl.querySelector(
     `.discription__character`
   ).textContent = `Status: ${person.status}, Species: ${person.species}, Gender: ${person.gender}`;
+ divEl.appendChild(cloneEl);
 }
 
 dataJson.results.forEach((character) => {
